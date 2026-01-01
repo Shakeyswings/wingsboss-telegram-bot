@@ -1,15 +1,15 @@
 {
   "name": "wingsboss-telegram-bot",
   "version": "1.0.0",
-  "private": true,
+  "description": "WingsBoss Telegram ordering bot",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
     "telegraf": "^4.16.3"
-  },
-  "engines": {
-    "node": "18.x"
   }
 }
