@@ -1,0 +1,17 @@
+{
+  "categories": [
+    {
+      "name": "🍗 Wings",
+      "items": [
+        { "name": "9 Buffalo Wings", "price": 0 },
+        { "name": "12 Cajun Wings", "price": 0 }
+      ]
+    },
+    {
+      "name": "🍟 Sides",
+      "items": [
+        { "name": "Cajun Fries", "price": 0 }
+      ]
+    }
+  ]
+}
