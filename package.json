@@ -1,13 +1,21 @@
 {
   "name": "wingsboss-telegram-bot",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "type": "module",
-  "main": "index.js",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "start": "node index.js"
+    "build": "npm run --workspaces --if-present build",
+    "lint": "npm run --workspaces --if-present lint",
+    "typecheck": "npm run --workspaces --if-present typecheck",
+    "test": "npm run --workspaces --if-present test"
   },
   "dependencies": {
     "telegraf": "^4.16.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
   }
 }
