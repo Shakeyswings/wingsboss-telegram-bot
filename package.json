@@ -9,6 +9,7 @@
   "scripts": {
     "build": "npm run --workspaces --if-present build",
     "lint": "npm run --workspaces --if-present lint",
+    "pr:open": "bash scripts/open-pr.sh",
     "typecheck": "npm run --workspaces --if-present typecheck",
     "test": "npm run --workspaces --if-present test"
   },
