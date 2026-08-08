@@ -34,3 +34,6 @@ Staff bot:
 ```bash
 BOT_TOKEN_STAFF=<telegram-token> npm run dev -w @wingboss/staff-bot
 ```
+
+The customer bot supports `/menu` and the **View Menu** inline button. Menu data and
+prices are maintained in `packages/core/src/menu.ts` from the supplied menu board.
