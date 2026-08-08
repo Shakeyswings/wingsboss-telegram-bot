@@ -12,10 +12,12 @@
     "typecheck": "npm run --workspaces --if-present typecheck",
     "test": "npm run --workspaces --if-present test"
   },
-  "dependencies": {
-    "telegraf": "^4.16.3"
-  },
   "devDependencies": {
-    "typescript": "^5.7.3"
+    "@types/node": "^22.13.10",
+    "@typescript-eslint/eslint-plugin": "^8.26.1",
+    "@typescript-eslint/parser": "^8.26.1",
+    "eslint": "^9.22.0",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.8"
   }
 }

@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "main": "src/index.ts",
+  "main": "dist/src/index.js",
   "scripts": {
-    "build": "tsc -p tsconfig.json --outDir dist --noEmit false",
-    "lint": "tsc -p tsconfig.json --noEmit",
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint src test --ext .ts",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "node --test test/core.test.js"
+    "test": "vitest run"
   }
 }

@@ -1,5 +1,3 @@
-declare const process: { env: Record<string, string | undefined>; exit(code?: number): never };
-
 import { Markup, Telegraf } from "telegraf";
 
 const token = process.env.BOT_TOKEN_STAFF;
