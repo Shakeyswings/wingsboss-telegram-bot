@@ -1,0 +1,45 @@
+name: Open PR-001
+
+on:
+  workflow_dispatch:
+    inputs:
+      head:
+        description: Branch containing the PR-001 changes
+        required: true
+        default: work
+      base:
+        description: Pull request base branch
+        required: true
+        default: WBNext
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  open-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.head }}
+
+      - name: Create pull request if absent
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          PR_BASE: ${{ inputs.base }}
+          PR_HEAD: ${{ inputs.head }}
+          PR_TITLE: "PR-001: vNext monorepo scaffold (customer bot + staff bot + core package)"
+        run: |
+          existing_url="$(gh pr list --base "$PR_BASE" --head "$PR_HEAD" --state open --json url --jq '.[0].url // empty')"
+          if [ -n "$existing_url" ]; then
+            echo "PR already exists: $existing_url"
+          else
+            gh pr create \
+              --base "$PR_BASE" \
+              --head "$PR_HEAD" \
+              --title "$PR_TITLE" \
+              --body-file .github/pr-001-body.md
+          fi
